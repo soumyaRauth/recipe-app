@@ -1,5 +1,5 @@
-import { Component, OnInit } from "@angular/core";
-import { Recipe } from '../recipe.model';
+import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
+import { Recipe } from "../recipe.model";
 
 
 @Component({
@@ -8,11 +8,24 @@ import { Recipe } from '../recipe.model';
   styleUrls: ["./recipe-list.component.scss"]
 })
 export class RecipeListComponent implements OnInit {
-    recipes: Recipe[] = [
-        new Recipe("chow mein", "Chinese Chow min", "https://c.ndtvimg.com/mnng9ei8_chowmein_640x480_25_July_18.jpg"),
-        new Recipe("chow mein", "Chinese Chow min", "https://c.ndtvimg.com/mnng9ei8_chowmein_640x480_25_July_18.jpg")
-      ];
-    
+  @Output() recipeItemDetail= new EventEmitter<{}>();
+  recipes: Recipe[] = [
+    new Recipe(
+      "chow mein 1",
+      "Chinese Chow min 1",
+      "https://c.ndtvimg.com/mnng9ei8_chowmein_640x480_25_July_18.jpg"
+    ),
+    new Recipe(
+      "chow mein 2",
+      "Chinese Chow min 2",
+      "https://c.ndtvimg.com/mnng9ei8_chowmein_640x480_25_July_18.jpg"
+    )
+  ];
+
+  //On click recipe item emit to item to the detail component
+  getRecipeItem(recipe) {
+    this.recipeItemDetail.emit(recipe)
+  }
 
   ngOnInit() {}
 }

@@ -7,8 +7,10 @@ import { Ingredients } from '../shared/shopping.model';
     styleUrls:['./shopping-list.component.scss']
 })
 export class ShoppingListComponent{
-ingredients:Ingredients[]=[
-    new Ingredients("apple",5),
-    new Ingredients("Tomato",10)
-]
+ingredients:Ingredients[]=[]
+
+
+getNewIngredients(event:Ingredients){
+    this.ingredients.push(event);
+}
 }

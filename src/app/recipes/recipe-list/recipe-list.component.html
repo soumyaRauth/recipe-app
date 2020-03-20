@@ -7,21 +7,6 @@
 </div>
 <hr class="ml-4">
 <div class="row ml-3" >
-  <div class="col-12">
-    <a href="#" class="list-group-item list-group-item-action text-my-own-color clearfix" *ngFor="let recipe of recipes">
-      <div class="float-left">
-        <h4 class="list-group-item-heading">{{ recipe.name }}</h4>
-        <p class="list-group-item-text">{{ recipe.description }}</p>
-      </div>
-      <span class="float-right">
-        <img
-          [src]="recipe.imagePath"
-          alt=""
-          class="img-responsive"
-          style="max-height:100px;"
-        />
-      </span>
-    </a>
+<app-recipe-item *ngFor="let recipe of recipes" [recipe]="recipe" class="ml-3" (click)="getRecipeItem(recipe)"></app-recipe-item> 
 </div>
-<app-recipe-item class="ml-3"></app-recipe-item>
-</div>
+ 

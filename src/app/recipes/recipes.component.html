@@ -1,8 +1,18 @@
-<div class="row" >
-    <div class="col-5">
-<app-recipe-list></app-recipe-list>
-    </div>
-    <div class="col-7">
-<app-recipe-detail></app-recipe-detail>
-    </div>
+<div class="row">
+  <div class="col-5">
+    <app-recipe-list
+      (recipeItemDetail)="getRecipeItemVal($event)"
+    ></app-recipe-list>
+  </div>
+  <div class="col-7">
+    <app-recipe-detail
+      [detailItem]="recipeItem"
+      *ngIf="recipeItem; else defaultMessage"
+    ></app-recipe-detail>
+  </div>
+  <div class="col-7">
+      <ng-template #defaultMessage>
+          <h4>Please Select an item from the left to see detail</h4>
+      </ng-template>
+  </div>
 </div>

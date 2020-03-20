@@ -7,8 +7,14 @@ import { Recipe } from "./recipe.model";
   styleUrls: ["./recipes.component.scss"]
 })
 export class RecipesComponent implements OnInit {
- 
+  recipeItem:Recipe;
   constructor() {}
+
+  getRecipeItemVal(item) {
+    console.log("Recipt Itegm");
+    console.log(item);
+    this.recipeItem=item;
+  }
 
   ngOnInit(): void {}
 }
