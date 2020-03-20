@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output,EventEmitter } from '@angular/core';
 
 @Component({
     selector:'app-header',
@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
     styleUrls:['./header.component.scss']
 })
 export class HeaderComponent{
+@Output() selectedMenu = new EventEmitter<string>();
 
+    loadRecipe(val:string){
+        console.log(val)
+        this.selectedMenu.emit(val)
+    }
+
+    loadShopping(val:string){
+        console.log(val)
+        this.selectedMenu.emit(val)
+    }
 }

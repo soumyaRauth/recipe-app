@@ -1,9 +1,9 @@
 <div class="container-fluid p-0">
-    <app-header></app-header>
+    <app-header (selectedMenu)="loadMenuItem($event)"></app-header>
     <div class="row" >
         <div class="col"> 
-            <app-recipes></app-recipes>
-            <app-shopping-list></app-shopping-list>
+            <app-recipes *ngIf="menuDisplay=='recipe'"></app-recipes>
+            <app-shopping-list *ngIf="menuDisplay=='shopping'"></app-shopping-list>
         </div>
     </div>
 </div>

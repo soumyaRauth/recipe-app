@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+menuDisplay:string='recipe';
 
+  loadMenuItem(event){
+    console.log("Event fired");
+    console.log(event);
+    this.menuDisplay=event;
+  }
 }
